@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>اطلاع رسانی</title>
+    <!-- اضافه کردن فونت Vazir از طریق CDN -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" type="text/css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* اعمال فونت Vazir به کل متن‌ها */
+        body {
+            font-family: Vazir, Arial, sans-serif;
+            background-color: #f0f0f0;
+            overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+            touch-action: pan-y; /* فعال‌سازی اسکرول عمودی و غیرفعال‌سازی زوم */
+        }
+
+        /* کادر ثابت بالا */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .header .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .header .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        /* محتوای صفحه */
+        .content {
+            margin-top: 80px; /* فاصله از هدر ثابت */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content img {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .content h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .content .date {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .content hr {
+            border: 0;
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px 0;
+        }
+
+        /* جلوگیری از زوم با ژست‌های لمسی */
+        @media (pointer: coarse) {
+            body {
+                touch-action: pan-y;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- کادر ثابت بالا -->
+    <div class="header">
+        <img src="https://s33.picofile.com/file/8483389992/Picsart_25_03_12_05_24_26_172.jpg" alt="لوگو" class="logo">
+        <span class="title">اطلاع رسانی</span>
+    </div>
+
+    <!-- محتوای صفحه -->
+    <div class="content">
+        <img src="https://s33.picofile.com/file/8483389992/Picsart_25_03_12_05_24_26_172.jpg" alt="عکس مربعی">
+        <h1>موضوع اطلاعیه</h1>
+        <p>این یک متن توضیحی است که در مورد اطلاعیه ارائه شده توضیح می‌دهد. این متن می‌تواند چند خطی باشد و اطلاعات بیشتری را در اختیار کاربر قرار دهد.</p>
+        <p class="date">تاریخ ثبت: ۱۴۰۳/۰۱/۱۵</p>
+        <hr>
+        <!-- محتوای بیشتر برای اسکرول -->
+        <p>این یک متن اضافی است تا صفحه اسکرول داشته باشد. این متن می‌تواند ادامه توضیحات یا اطلاعات دیگری باشد.</p>
+        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+    </div>
+
+    <script>
+        // جلوگیری از زوم با ژست‌های لمسی
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+
+        // جلوگیری از زوم با کلیدهای Ctrl + Scroll
+        document.addEventListener('wheel', function (e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>
